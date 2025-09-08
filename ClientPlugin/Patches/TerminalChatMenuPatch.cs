@@ -2,6 +2,7 @@
 using Sandbox.Engine.Multiplayer;
 using Sandbox.Game.Entities.Character;
 using Sandbox.Game.GameSystems;
+using Sandbox.Game.GameSystems.Chat;
 using Sandbox.Game.Gui;
 using Sandbox.Game.Localization;
 using Sandbox.Game.Multiplayer;
@@ -18,7 +19,7 @@ using VRageMath;
 
 namespace ClientPlugin.Patches
 {
-    [HarmonyPatch(typeof(MyGuiScreenTerminal), "CreateChatPageControls")]
+    //[HarmonyPatch(typeof(MyGuiScreenTerminal), "CreateChatPageControls")]
     internal static class TerminalChatMenuPatch
     {
         private static string searchBoxText = "";
