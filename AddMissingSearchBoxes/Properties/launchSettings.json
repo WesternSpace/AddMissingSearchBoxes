@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Space Engineers": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Western\\AppData\\Roaming\\Pulsar\\Legacy.exe",
+      "workingDirectory": "C:\\Users\\Western\\AppData\\Roaming\\Pulsar",
+      "nativeDebugging": false,
+	  "hotReloadEnabled": true
+    }
+  }
+}
