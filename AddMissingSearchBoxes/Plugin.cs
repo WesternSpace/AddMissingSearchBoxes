@@ -18,9 +18,9 @@ namespace AddMissingSearchBoxes
         public void Init(object gameInstance)
         {
             Log.Info("Loading");
-//#if DEBUG
+#if DEBUG
             Harmony.DEBUG = true;
-//#endif
+#endif
             Log.Debug("Applying Harmony patches");
             Harmony patcher = new(Name);
 
