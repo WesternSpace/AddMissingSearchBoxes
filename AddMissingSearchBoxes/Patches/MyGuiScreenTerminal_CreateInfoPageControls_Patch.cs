@@ -5,10 +5,10 @@ using Sandbox.Graphics.GUI;
 using VRage.Utils;
 using VRageMath;
 
-namespace ClientPlugin.Patches
+namespace AddMissingSearchBoxes.Patches
 {
     [HarmonyPatch(typeof(MyGuiScreenTerminal), "CreateInfoPageControls")]
-    internal static class GridInfoMenuPatch
+    internal static class MyGuiScreenTerminal_CreateInfoPageControls_Patch
     {
         public static string SearchBoxText = "";
 
@@ -19,7 +19,7 @@ namespace ClientPlugin.Patches
                 return;
             }
 
-            MyGuiControlSearchBox searchBox = new MyGuiControlSearchBox
+            MyGuiControlSearchBox searchBox = new()
             {
                 OriginAlign = MyGuiDrawAlignEnum.HORISONTAL_LEFT_AND_VERTICAL_TOP,
                 Position = new Vector2(-0.452f, -0.332f),
@@ -34,7 +34,7 @@ namespace ClientPlugin.Patches
         {
             SearchBoxText = newText;
 
-            AccessTools.Method(AccessTools.TypeByName("Sandbox.Game.Gui.MyTerminalInfoController"), "RequestServerLimitInfo").Invoke(null, null);
+            MyTerminalInfoController.RequestServerLimitInfo();
         }
     }
 }

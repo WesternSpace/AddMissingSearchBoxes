@@ -1,6 +1,6 @@
 using System;
 
-namespace ClientPlugin.Logging
+namespace AddMissingSearchBoxes.Logging
 {
     public interface IPluginLogger
     {

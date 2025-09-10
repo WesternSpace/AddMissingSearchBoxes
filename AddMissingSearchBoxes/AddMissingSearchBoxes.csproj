@@ -11,7 +11,20 @@
 	</PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Lib.Harmony" Version="2.4.1" />
+	<PackageReference Include="Krafs.Publicizer">
+      <Version>2.3.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+	   <PublicizerLogFilePath>D:\VSProjects\AddMissingSearchBoxes\publicizer.log</PublicizerLogFilePath>
+    </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+	<Publicize Include="Sandbox.Game" IncludeCompilerGeneratedMembers="false" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PublicizerClearCacheOnClean>true</PublicizerClearCacheOnClean>
+    <PublicizerRuntimeStrategies>Unsafe</PublicizerRuntimeStrategies>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DirectShowLib, Version=2.1.0.1599, Culture=neutral, PublicKeyToken=null">
       <HintPath>$(Bin64)\DirectShowLib.dll</HintPath>

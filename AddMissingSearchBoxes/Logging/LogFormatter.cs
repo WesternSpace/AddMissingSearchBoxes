@@ -3,12 +3,12 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 
-namespace ClientPlugin.Logging
+namespace AddMissingSearchBoxes.Logging
 {
     public class LogFormatter
     {
         private const int MaxExceptionDepth = 100;
-        private readonly ThreadLocal<StringBuilder> threadLocalStringBuilder = new ThreadLocal<StringBuilder>();
+        private readonly ThreadLocal<StringBuilder> threadLocalStringBuilder = new();
         private readonly string prefix;
 
         protected LogFormatter(string prefix)
@@ -27,8 +27,7 @@ namespace ClientPlugin.Logging
                 threadLocalStringBuilder.Value = sb;
             }
 
-            if (message == null)
-                message = "";
+            message ??= "";
 
             sb.Append(prefix);
 
