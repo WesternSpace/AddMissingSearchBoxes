@@ -22,6 +22,7 @@ namespace AddMissingSearchBoxes.Patches
                 OriginAlign = MyGuiDrawAlignEnum.HORISONTAL_LEFT_AND_VERTICAL_TOP,  
             };
             searchBox.Size = new Vector2(0.29f, searchBox.Size.Y);
+            searchBox.SearchText = SearchBoxText;
             searchBox.m_label.Text = "Search by tag";
             searchBox.OnTextChanged += delegate (string newText)
             {
